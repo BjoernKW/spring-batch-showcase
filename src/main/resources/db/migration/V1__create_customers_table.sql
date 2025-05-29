@@ -1,4 +1,0 @@
-CREATE TABLE IF NOT EXISTS customers (
-    id BIGINT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL
-);
