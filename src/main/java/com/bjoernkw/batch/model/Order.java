@@ -1,4 +1,4 @@
-package com.example.batch.model;
+package com.bjoernkw.batch.model;
 
 import jakarta.persistence.*;
 import java.math.BigDecimal;

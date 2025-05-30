@@ -2,26 +2,23 @@ spring:
   application:
     name: spring-batch-showcase
 
-  # MySQL datasource (source database)
   datasource:
+    # MySQL datasource (source database)
     mysql:
-      url: jdbc:mysql://localhost:3306/source_db?useSSL=false&allowPublicKeyRetrieval=true
+      jdbcUrl: jdbc:mysql://localhost:3306/source_db?useSSL=false&allowPublicKeyRetrieval=true
       username: root
       password: password
-      driver-class-name: com.mysql.cj.jdbc.Driver
 
     # PostgreSQL datasource (target database)
     postgresql:
-      url: jdbc:postgresql://localhost:5432/target_db
+      jdbcUrl: jdbc:postgresql://localhost:5432/target_db
       username: postgres
       password: password
-      driver-class-name: org.postgresql.Driver
 
     # H2 for Spring Batch metadata
-    url: jdbc:h2:mem:batch_db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    jdbcUrl: jdbc:h2:mem:batch_db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     username: sa
     password:
-    driver-class-name: org.h2.Driver
 
   jpa:
     hibernate:

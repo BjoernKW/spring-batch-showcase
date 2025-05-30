@@ -1,4 +1,4 @@
-package com.example.batch.config;
+package com.bjoernkw.batch.config;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;

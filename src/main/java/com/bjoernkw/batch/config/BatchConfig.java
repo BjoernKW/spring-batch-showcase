@@ -1,11 +1,11 @@
-package com.example.batch.config;
+package com.bjoernkw.batch.config;
 
-import com.example.batch.listener.JobCompletionListener;
-import com.example.batch.model.Customer;
-import com.example.batch.model.Order;
-import com.example.batch.model.ProcessedOrder;
-import com.example.batch.processor.CustomerProcessor;
-import com.example.batch.processor.OrderProcessor;
+import com.bjoernkw.batch.listener.JobCompletionListener;
+import com.bjoernkw.batch.model.Customer;
+import com.bjoernkw.batch.model.Order;
+import com.bjoernkw.batch.model.ProcessedOrder;
+import com.bjoernkw.batch.processor.CustomerProcessor;
+import com.bjoernkw.batch.processor.OrderProcessor;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.job.builder.JobBuilder;

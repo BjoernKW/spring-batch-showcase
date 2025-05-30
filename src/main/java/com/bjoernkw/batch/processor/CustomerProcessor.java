@@ -1,6 +1,6 @@
-package com.example.batch.processor;
+package com.bjoernkw.batch.processor;
 
-import com.example.batch.model.Customer;
+import com.bjoernkw.batch.model.Customer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
