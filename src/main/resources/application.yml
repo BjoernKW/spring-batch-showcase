@@ -5,18 +5,18 @@ spring:
   datasource:
     # MySQL datasource (source database)
     mysql:
-      jdbcUrl: jdbc:mysql://localhost:3306/source_db?useSSL=false&allowPublicKeyRetrieval=true
+      url: jdbc:mysql://localhost:3306/source_db?useSSL=false&allowPublicKeyRetrieval=true
       username: root
       password: password
 
     # PostgreSQL datasource (target database)
     postgresql:
-      jdbcUrl: jdbc:postgresql://localhost:5432/target_db
+      url: jdbc:postgresql://localhost:5432/target_db
       username: postgres
       password: password
 
     # H2 for Spring Batch metadata
-    jdbcUrl: jdbc:h2:mem:batch_db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:batch_db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     username: sa
     password:
 
