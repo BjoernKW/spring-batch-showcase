@@ -1,71 +1,114 @@
 package com.bjoernkw.batch.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "orders")
 public class Order {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    
-    @Column(name = "customer_id")
-    private Long customerId;
-    
-    @Column(name = "product_name")
-    private String productName;
-    
-    @Column(name = "quantity")
-    private Integer quantity;
-    
-    @Column(name = "unit_price", precision = 10, scale = 2)
-    private BigDecimal unitPrice;
-    
-    @Column(name = "order_date")
-    private LocalDateTime orderDate;
-    
-    @Column(name = "status")
-    private String status;
 
-    // Constructors
-    public Order() {}
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    public Order(Long customerId, String productName, Integer quantity, BigDecimal unitPrice) {
-        this.customerId = customerId;
-        this.productName = productName;
-        this.quantity = quantity;
-        this.unitPrice = unitPrice;
-        this.orderDate = LocalDateTime.now();
-        this.status = "PENDING";
-    }
+  @Column(name = "customer_id")
+  private Long customerId;
 
-    // Getters and Setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+  @Column(name = "product_name")
+  private String productName;
 
-    public Long getCustomerId() { return customerId; }
-    public void setCustomerId(Long customerId) { this.customerId = customerId; }
+  @Column(name = "quantity")
+  private Integer quantity;
 
-    public String getProductName() { return productName; }
-    public void setProductName(String productName) { this.productName = productName; }
+  @Column(name = "unit_price", precision = 10, scale = 2)
+  private BigDecimal unitPrice;
 
-    public Integer getQuantity() { return quantity; }
-    public void setQuantity(Integer quantity) { this.quantity = quantity; }
+  @Column(name = "order_date")
+  private LocalDateTime orderDate;
 
-    public BigDecimal getUnitPrice() { return unitPrice; }
-    public void setUnitPrice(BigDecimal unitPrice) { this.unitPrice = unitPrice; }
+  @Column(name = "status")
+  private String status;
 
-    public LocalDateTime getOrderDate() { return orderDate; }
-    public void setOrderDate(LocalDateTime orderDate) { this.orderDate = orderDate; }
+  // Constructors
+  public Order() {
+  }
 
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
+  public Order(Long customerId, String productName, Integer quantity, BigDecimal unitPrice) {
+    this.customerId = customerId;
+    this.productName = productName;
+    this.quantity = quantity;
+    this.unitPrice = unitPrice;
+    this.orderDate = LocalDateTime.now();
+    this.status = "PENDING";
+  }
 
-    @Override
-    public String toString() {
-        return String.format("Order{id=%d, customerId=%d, productName='%s', quantity=%d, unitPrice=%s, status='%s'}", 
-                           id, customerId, productName, quantity, unitPrice, status);
-    }
+  // Getters and Setters
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public Long getCustomerId() {
+    return customerId;
+  }
+
+  public void setCustomerId(Long customerId) {
+    this.customerId = customerId;
+  }
+
+  public String getProductName() {
+    return productName;
+  }
+
+  public void setProductName(String productName) {
+    this.productName = productName;
+  }
+
+  public Integer getQuantity() {
+    return quantity;
+  }
+
+  public void setQuantity(Integer quantity) {
+    this.quantity = quantity;
+  }
+
+  public BigDecimal getUnitPrice() {
+    return unitPrice;
+  }
+
+  public void setUnitPrice(BigDecimal unitPrice) {
+    this.unitPrice = unitPrice;
+  }
+
+  public LocalDateTime getOrderDate() {
+    return orderDate;
+  }
+
+  public void setOrderDate(LocalDateTime orderDate) {
+    this.orderDate = orderDate;
+  }
+
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
+  @Override
+  public String toString() {
+    return String.format(
+        "Order{id=%d, customerId=%d, productName='%s', quantity=%d, unitPrice=%s, status='%s'}",
+        id, customerId, productName, quantity, unitPrice, status);
+  }
 }

@@ -1,13 +1,12 @@
 package com.bjoernkw.batch.controller;
 
+import java.util.HashMap;
+import java.util.Map;
 import org.springframework.batch.core.explore.JobExplorer;
 import org.springframework.batch.core.launch.JobOperator;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/batch")
@@ -31,7 +30,8 @@ public class JobController {
 
       // Get running executions
       status.put("runningExecutions", jobOperator.getRunningExecutions("csvProcessingJob"));
-      status.put("runningDatabaseExecutions", jobOperator.getRunningExecutions("databaseProcessingJob"));
+      status.put("runningDatabaseExecutions",
+          jobOperator.getRunningExecutions("databaseProcessingJob"));
 
     } catch (Exception e) {
       status.put("error", e.getMessage());
