@@ -1,5 +1,4 @@
 -- PostgreSQL schema for target database
-CREATE DATABASE target_db;
 \c target_db;
 
 DROP TABLE IF EXISTS processed_orders;
