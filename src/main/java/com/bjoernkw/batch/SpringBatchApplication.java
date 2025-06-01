@@ -7,6 +7,7 @@ import org.springframework.batch.core.configuration.annotation.EnableBatchProces
 @SpringBootApplication
 @EnableBatchProcessing
 public class SpringBatchApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(SpringBatchApplication.class, args);
     }

@@ -144,7 +144,6 @@ src/
 │       ├── application.yml
 │       ├── schema-mysql.sql
 │       ├── schema-postgresql.sql
-│       ├── data.sql
 │       └── input/
 │           └── customers.csv
 └── pom.xml
