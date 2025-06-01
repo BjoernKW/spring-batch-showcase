@@ -19,13 +19,13 @@ A comprehensive Spring Boot application demonstrating Spring Batch capabilities 
 ## Quick Start
 
 ### Prerequisites
-- Java 17+
+- Java 21+
 - Maven 3.6+
 - Docker & Docker Compose
 
 ### 1. Start Databases
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 ### 2. Run Application
