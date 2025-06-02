@@ -43,3 +43,6 @@ pom.xml.versionsBackup
 
 ### just use ###
 /.pom.xml.temp
+
+### Output directory ###
+/output/
