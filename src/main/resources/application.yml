@@ -32,8 +32,6 @@ spring:
   batch:
     job:
       enabled: false # Prevent automatic job execution on startup
-    jdbc:
-      initialize-schema: always
 
 logging:
   level:
