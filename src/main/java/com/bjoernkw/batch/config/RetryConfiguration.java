@@ -1,7 +1,5 @@
 package com.bjoernkw.batch.config;
 
-import org.springframework.batch.core.scope.context.ChunkContext;
-import org.springframework.batch.item.Chunk;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.retry.backoff.ExponentialBackOffPolicy;
