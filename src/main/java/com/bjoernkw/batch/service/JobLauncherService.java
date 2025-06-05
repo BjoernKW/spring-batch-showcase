@@ -39,6 +39,7 @@ public class JobLauncherService {
     try {
       JobParameters jobParameters = new JobParametersBuilder()
           .addLong("startAt", System.currentTimeMillis())
+          .addString("jobId", java.util.UUID.randomUUID().toString()) // Add a stable unique identifier
           .toJobParameters();
 
       JobExecution execution = jobLauncher.run(csvProcessingJob, jobParameters);
@@ -57,6 +58,7 @@ public class JobLauncherService {
     try {
       JobParameters jobParameters = new JobParametersBuilder()
           .addLong("startAt", System.currentTimeMillis())
+          .addString("jobId", java.util.UUID.randomUUID().toString()) // Add a stable unique identifier
           .toJobParameters();
 
       JobExecution execution = jobLauncher.run(databaseProcessingJob, jobParameters);
@@ -75,9 +77,12 @@ public class JobLauncherService {
     StringBuilder result = new StringBuilder();
 
     try {
+      // Create a stable timestamp to use for both jobs
+      long timestamp = System.currentTimeMillis();
+
       // Launch CSV job
       JobParameters csvJobParameters = new JobParametersBuilder()
-          .addLong("startAt", System.currentTimeMillis())
+          .addLong("startAt", timestamp)
           .addString("jobType", "csv")
           .toJobParameters();
 
@@ -86,7 +91,7 @@ public class JobLauncherService {
 
       // Launch Database job
       JobParameters dbJobParameters = new JobParametersBuilder()
-          .addLong("startAt", System.currentTimeMillis())
+          .addLong("startAt", timestamp) // Use the same timestamp
           .addString("jobType", "database")
           .toJobParameters();
 

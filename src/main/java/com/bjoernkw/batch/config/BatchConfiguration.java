@@ -153,8 +153,12 @@ public class BatchConfiguration {
         .faultTolerant()
         .skipLimit(10)
         .skip(Exception.class)
+        // Modified retry configuration with more specific exceptions
         .retryLimit(3)
-        .retry(Exception.class)
+        .retry(org.springframework.dao.OptimisticLockingFailureException.class)
+        .retry(org.springframework.dao.DeadlockLoserDataAccessException.class)
+        .retry(java.net.SocketTimeoutException.class)
+        // Don't retry all exceptions, which can cause key inconsistencies
         .build();
   }
 
